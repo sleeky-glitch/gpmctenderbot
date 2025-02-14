@@ -135,13 +135,16 @@ def init_clients():
             )
         )
 
-        # Initialize Pinecone using the new method
-        pinecone.init_api_key(
+        # Initialize Pinecone using the current method
+        pc = pinecone.Pinecone(
             api_key=st.secrets["PINECONE_API_KEY"],
             environment=st.secrets["PINECONE_ENVIRONMENT"]
         )
 
-        return openai_client, pinecone.Index("tender-documents")
+        # Get the index
+        index = pc.Index("tender-documents")
+
+        return openai_client, index
     except Exception as e:
         st.error(f"Error initializing clients: {str(e)}")
         raise e
