@@ -100,8 +100,9 @@ def init_clients():
     """Initialize OpenAI and Pinecone clients"""
     openai_client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
-    pinecone.init(
-        api_key=st.secrets["PINECONE_API_KEY"],
+    # Initialize Pinecone using the new method
+    pinecone.init_api_key(
+        api_key=st.secrets["PINECONE_API_KEY"]
     )
 
     return openai_client, pinecone.Index("tender-documents")
