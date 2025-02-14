@@ -102,7 +102,6 @@ def init_clients():
 
     pinecone.init(
         api_key=st.secrets["PINECONE_API_KEY"],
-        environment=st.secrets["PINECONE_ENVIRONMENT"]
     )
 
     return openai_client, pinecone.Index("tender-documents")
