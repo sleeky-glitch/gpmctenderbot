@@ -137,8 +137,7 @@ def init_clients():
 
         # Initialize Pinecone using the current method
         pc = pinecone.Pinecone(
-            api_key=st.secrets["PINECONE_API_KEY"],
-            environment=st.secrets["PINECONE_ENVIRONMENT"]
+            api_key=st.secrets["PINECONE_API_KEY"]
         )
 
         # Get the index
