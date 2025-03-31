@@ -1,33 +1,27 @@
-# AI Tender Generator
-
+AI Tender Generator
 An intelligent web application that automatically generates professional tender documents using AI, powered by OpenAI's GPT-4 and Pinecone vector database.
 
-## Overview
-
+Overview
 The AI Tender Generator is a Streamlit-based application that helps organizations create comprehensive tender documents efficiently. It leverages machine learning to generate professional, compliant tender documents by learning from a database of existing tenders.
 
-### Key Features
-
-- **AI-Powered Generation**: Utilizes OpenAI's GPT-4 for generating contextually relevant tender content.
-- **Similarity Search**: Uses Pinecone vector database to find and learn from similar existing tenders.
-- **Structured Output**: Generates complete tender documents with standard sections.
-- **User-Friendly Interface**: Simple web interface for inputting project details.
-- **Multiple Export Options**: Download generated tenders in both TEXT and JSON formats.
-- **Real-time Progress Tracking**: Visual feedback during document generation.
-
-## Prerequisites
-
-- Python 3.7+
-- OpenAI API key
-- Pinecone API key
-- Required Python packages (see `requirements.txt`)
-
-## Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/ai-tender-generator.git
-   cd ai-tender-generator
+Key Features
+AI-Powered Generation: Utilizes OpenAI's GPT-4 for generating contextually relevant tender content.
+Similarity Search: Uses Pinecone vector database to find and learn from similar existing tenders.
+Structured Output: Generates complete tender documents with standard sections.
+User-Friendly Interface: Simple web interface for inputting project details.
+Multiple Export Options: Download generated tenders in both TEXT and JSON formats.
+Real-time Progress Tracking: Visual feedback during document generation.
+Prerequisites
+Python 3.7+
+OpenAI API key
+Pinecone API key
+Required Python packages (see requirements.txt)
+Installation
+Clone the repository:
+bash
+Copy Code
+git clone https://github.com/yourusername/ai-tender-generator.git
+cd ai-tender-generator
 Install required packages:
 bash
 Copy Code
@@ -82,7 +76,7 @@ Language Model: OpenAI GPT-4
 Vector Database: Pinecone
 Embedding Model: OpenAI Ada-002
 Key Classes
-TenderGenerator: Main class handling tender generation
+TenderGenerator: Main class handling tender generation.
 get_embedding(): Generates embeddings for text.
 search_similar_sections(): Searches for similar tender sections.
 generate_tender_section(): Generates individual sections.
