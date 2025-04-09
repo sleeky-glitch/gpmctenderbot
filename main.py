@@ -157,32 +157,33 @@ def main():
         .stProgress > div > div > div {
             background-color: #0066cc;
         }
-        .logo-container {
+        .header-container {
             display: flex;
-            justify-content: center;
             align-items: center;
-            padding: 20px 0;
-            background-color: #ffffff;
+            padding: 10px 20px;
+            background-color: #f8f9fa;
             border-bottom: 2px solid #eee;
             margin-bottom: 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .logo-image {
-            width: 200px;
+            width: 100px;
             height: auto;
             object-fit: contain;
+            margin-right: 20px;
         }
-        .header-container {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 20px;
-            background-color: #f8f9fa;
-            border-radius: 10px;
+        .header-text {
+            flex-grow: 1;
+        }
+        .header-text h1 {
+            margin: 0;
+            color: #333;
+            font-size: 2em;
         }
         .subheader {
             color: #666;
-            font-size: 1.2em;
-            margin-top: 10px;
+            font-size: 1.1em;
+            margin: 5px 0 0 0;
         }
         .stTab {
             background-color: #ffffff;
@@ -193,18 +194,19 @@ def main():
         </style>
     """, unsafe_allow_html=True)
 
-    # Logo and Header
+    # Header with logo and text
     st.markdown(f"""
-        <div class="logo-container">
+        <div class="header-container">
             <img class="logo-image"
                  src="https://upload.wikimedia.org/wikipedia/en/d/df/GujaratMineralDevelopmentCorporationLogo.jpg"
                  alt="GMDC Logo">
-        </div>
-        <div class="header-container">
-            <h1>GMDC Tender Generator</h1>
-            <p class="subheader">Gujarat Mineral Development Corporation Limited</p>
+            <div class="header-text">
+                <h1>GMDC Tender Generator</h1>
+                <p class="subheader">Gujarat Mineral Development Corporation Limited</p>
+            </div>
         </div>
     """, unsafe_allow_html=True)
+
 
     try:
         openai_client, pinecone_index = init_clients()
