@@ -149,7 +149,7 @@ def init_clients():
         raise e
 
 def main():
-    st.set_page_config(page_title="AI Tender Generator", layout="wide")
+    st.set_page_config(page_title="GMDC Tender Generator", layout="wide")
 
     # Custom CSS
     st.markdown("""
@@ -170,10 +170,43 @@ def main():
         .stProgress > div > div > div {
             background-color: #1f77b4;
         }
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+            background-color: #f5f5f5;
+            border-bottom: 2px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .logo-container img {
+            max-width: 200px;
+            height: auto;
+        }
+        .header-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .subheader {
+            color: #666;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
         </style>
     """, unsafe_allow_html=True)
 
-    st.title("AI Tender Generator")
+    # Add GMDC Logo and Header
+    st.markdown("""
+        <div class="logo-container">
+            <img src="https://upload.wikimedia.org/wikipedia/en/d/df/GujaratMineralDevelopmentCorporationLogo.jpg"
+                 alt="GMDC Logo">
+        </div>
+        <div class="header-container">
+            <h1>GMDC Tender Generator</h1>
+            <p class="subheader">Gujarat Mineral Development Corporation Limited</p>
+        </div>
+    """, unsafe_allow_html=True)
+
     st.markdown("""
     This application generates professional tender documents based on your requirements,
     learning from existing tender documents in our database.
